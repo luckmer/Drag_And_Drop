@@ -1,0 +1,100 @@
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.main {
+  width: 100vw;
+}
+
+.dropzone div {
+  margin: 5px;
+  padding: 2px;
+}
+
+.data {
+  width: auto;
+}
+
+.dropzone {
+  padding: 15px;
+  width: 20vw;
+  border-radius: 10px;
+  background-color: #172b4d;
+  height: 100vh;
+  margin: 15px;
+}
+
+.header {
+  padding: 2px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: rgba(94, 114, 228, 0.5);
+  backdrop-filter: blur(15px);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.data {
+  background-color: #2f466d;
+  padding-bottom: 20px;
+  color: white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.data__context {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.Click {
+  background-color: #5e72e4;
+  color:#5e72e4;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.Disable {
+  border: 1px solid #2f466d;
+}
+
+.FilterPanel {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f2f1f7;
+}
+
+.dropData {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+
+.data.dragging{
+  background-color: red;
+}
