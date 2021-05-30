@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import { Style } from "./Style";
 
 const initialState = {
   tasks: [
