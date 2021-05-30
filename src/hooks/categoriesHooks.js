@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const CategoriesHook = (state) => {
+const CategoriesHook = (state) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -12,3 +12,4 @@ export const CategoriesHook = (state) => {
 
   return [categoriesPanel];
 };
+export default CategoriesHook;
