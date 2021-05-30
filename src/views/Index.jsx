@@ -13,7 +13,30 @@ const Index = () => {
     UpdateDragWay,
     OnDropZoneStart,
   ] = DragEndDrop();
+
   const [categoriesPanel] = CategoriesHook(state);
+
+  const DropZoneStart = useCallback(
+    (e, drop) => OnDropZoneStart(e, drop),
+    [OnDropZoneStart]
+  );
+
+  const DragOver = useCallback((e, drop) => onDragOver(e, drop), [onDragOver]);
+
+  const DragStart = useCallback(
+    ({ e, name }) => onDragStart(e, name),
+    [onDragStart]
+  );
+
+  const Drop = useCallback((e, drop) => onDrop(e, drop), [onDrop]);
+
+  const UpdateDragWay1 = useCallback(
+    (e) => {
+      UpdateDragWay(e);
+    },
+    [UpdateDragWay]
+  );
+  
 
   const Filter = (state, drop) =>
     state.tasks.filter(({ category }) => category.trim() === drop.trim());
@@ -30,24 +53,24 @@ const Index = () => {
             key={i}
             state={state}
             drop={drop}
-            DropZoneStart={OnDropZoneStart}
-            DragOver={onDragOver}
-            Drop={onDrop}
-            DragStart={onDragStart}
-            UpdateDragWay1={UpdateDragWay}
+            DropZoneStart={DropZoneStart}
+            DragOver={DragOver}
+            Drop={Drop}
+            DragStart={DragStart}
+            UpdateDragWay1={UpdateDragWay1}
             getByCategory={getByCategory}
           />
         );
       }),
     [
-      OnDropZoneStart,
-      UpdateDragWay,
       categoriesPanel,
+      DragOver,
+      DragStart,
+      DropZoneStart,
+      Drop,
+      UpdateDragWay1,
       getByCategory,
-      onDragStart,
-      onDrop,
       state,
-      onDragOver,
     ]
   );
 
